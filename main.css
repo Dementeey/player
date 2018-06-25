@@ -34,12 +34,30 @@ body {
   position: relative;
 
   width: 95vw;
-  max-width: 950px;
+  /* max-width: 950px; */
   max-height: 95vh;
   overflow: hidden;
 
   background: #000;
 }
+
+
+/* :-webkit-full-screen .player {
+  min-width: 100%;
+  min-height: 100%;
+}
+:-moz-full-screen .player {
+  min-width: 100%;
+  min-height: 100%;
+}
+:-ms-fullscreen .player {
+  min-width: 100%;
+  min-height: 100%;
+}
+:fullscreen .player {
+  min-width: 100%;
+  min-height: 100%;
+} */
 
 #video {
   width: 100%;
@@ -47,6 +65,8 @@ body {
 
   cursor: pointer;
 }
+
+
 
 .player__controls {
   position: absolute;
@@ -289,6 +309,9 @@ body {
   background-image: url("img/replay10.svg");
 }
 
+
+
+
 .player__btn.btn-fullscreen-open,
 .player__btn.btn-fullscreen-closed {
   width: 15px;
@@ -308,6 +331,40 @@ body {
   width: 20px;
 
   background-image: url('img/fullscreen-closed.svg');
+}
+
+/* {
+
+}
+:-webkit-full-screen .player__btn.player__btn.btn-fullscreen-closed {
+  display: block;
+}
+*/
+
+
+:-webkit-full-screen .player__btn.btn-fullscreen-open  {
+  display: none;
+}
+:-moz-full-screen .player__btn.btn-fullscreen-open {
+  display: none;
+}
+:-ms-fullscreen .player__btn.btn-fullscreen-open {
+  display: none;
+}
+:fullscreen .player__btn.btn-fullscreen-open {
+  display: none;
+}
+:-webkit-full-screen .player__btn.btn-fullscreen-closed{
+  display: block;
+}
+:-moz-full-screen .player__btn.btn-fullscreen-closed {
+  display: block;
+}
+:-ms-fullscreen .player__btn.btn-fullscreen-closed{
+  display: block;
+}
+:fullscreen .player__btn.btn-fullscreen-closed {
+  display: block;
 }
 
 
