@@ -369,3 +369,19 @@ body {
 
 
 /* -------------------- end --------------------*/
+
+@media screen and (max-width: 501px) and (orientation: portrait) {
+
+  :-webkit-full-screen #video {
+    margin-top: 50%;
+  }
+  :-moz-full-screen #video {
+    margin-top: 50%;
+  }
+  :-ms-fullscreen #video {
+    margin-top: 50%;
+  }
+  :fullscreen #video {
+    margin-top: 50%;
+  }
+}

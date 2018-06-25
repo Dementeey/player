@@ -95,48 +95,6 @@ function skip() {
   video.currentTime += parseFloat(this.dataset.skip);
 };
 
-// function openFullscreen() {
-//   if (player.requestFullscreen) {
-//     player.requestFullscreen();
-//   } else if (player.mozRequestFullScreen) {
-//     player.mozRequestFullScreen();
-//   } else if (player.webkitRequestFullscreen) {
-//     player.webkitRequestFullscreen();
-//   } else if (player.msRequestFullscreen) {
-//     player.msRequestFullscreen();
-//   }
-
-//   // player.style.minWidth  = 100 + 'vw';
-//   // player.style.minHeight = 100 + '%';
-//   // openFullscreenBtn.style.display = 'none';
-//   // closeFullscreenBtn.style.display = 'block';
-// }
-
-// const closeKeyDownEsc = (event) => {
-//   const keyCode = event.keyCode || event.which;
-// 	if (keyCode === 27) {
-//     event.preventDefault();
-//     closeFullscreen();
-// 	}
-// };
-
-// function closeFullscreen() {
-//   if (document.exitFullscreen) {
-//     document.exitFullscreen();
-//   } else if (document.mozCancelFullScreen) {
-//     document.mozCancelFullScreen();
-//   } else if (document.webkitExitFullscreen) {
-//     document.webkitExitFullscreen();
-//   }
-
-//   player.removeAttribute('style');
-//   openFullscreenBtn.removeAttribute('style');
-//   closeFullscreenBtn.removeAttribute('style');
-// }
-
-
-
-
 // events
 
 
@@ -199,7 +157,17 @@ video.addEventListener('dblclick', () => {
 });
 
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-  video.addEventListener('click', () => {
-    alert('mobilka =)');
-  });
+  screenfull.on('change', () => {
+		if (screenfull.isFullscreen) {
+      player.style.minWidth  = 100 + '%';
+      player.style.minHeight = 100 + 'vh';
+
+      video.style.minWidth  = 100 + '%';
+      video.style.minHeight = 'auto';
+
+    } else {
+      player.removeAttribute('style');
+      video.removeAttribute('style');
+    }
+  })
 }
